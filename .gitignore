@@ -1,0 +1,15 @@
+.env
+!.env.example
+.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.venv/
+.pytest_cache/
+data/
+runs/
+reproduced/
+*.zip
+conformbench_studio/

@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conformbench"
+version = "1.0.0"
+description = "Public runner and data contract for ConFormBench form-state update evaluation."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Timothy Veigel", email = "timothy.veigel@ifi.lmu.de"},
+    {name = "Sven Mayer", email = "sven.mayer@tu-dortmund.de"},
+]
+keywords = [
+    "benchmark",
+    "conversational form filling",
+    "dialogue state",
+    "record maintenance",
+    "evaluation",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "langchain-core>=0.3",
+    "langchain-openai>=0.3",
+    "langchain-anthropic>=0.3",
+    "python-dotenv>=1.0",
+    "pydantic>=2.0",
+    "loguru>=0.7",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+conformbench = "conformbench.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/tveigel/conformbench"
+Repository = "https://github.com/tveigel/conformbench"
+Issues = "https://github.com/tveigel/conformbench/issues"
+
+[tool.setuptools]
+include-package-data = false
+py-modules = ["llm"]
+packages = [
+    "conformbench",
+    "conformbench.evaluator",
+    "conformbench.systems",
+    "conformbench.systems.split_agent_utils",
+    "conformbench.studio",
+]
+
+[tool.setuptools.package-dir]
+conformbench = "conformbench"
+
+[tool.setuptools.package-data]
+conformbench = [
+    "studio/static/*",
+    "studio/static/modules/*.js",
+]

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConFormBench Studio</title>
+  <link rel="stylesheet" href="/static/style.css?v=2" />
+</head>
+<body>
+
+<!-- ── Sidebar ──────────────────────────────────────────────────────────────── -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <h1 id="sidebar-title">ConFormBench Studio</h1>
+    <div id="mode-switch">
+      <button class="mode-tab active" id="mode-items" type="button">Items</button>
+      <button class="mode-tab" id="mode-eval" type="button">Eval</button>
+      <button class="mode-tab" id="mode-howto" type="button">How-To</button>
+    </div>
+    <div id="sidebar-actions"></div>
+    <div id="progress-bar-outer"><div id="progress-bar-inner" style="width:0%"></div></div>
+    <div id="progress-label">Loading…</div>
+  </div>
+  <div id="item-list"><!-- populated by JS --></div>
+</aside>
+
+<!-- Sidebar resize handle -->
+<div id="sidebar-resize-handle"></div>
+
+<!-- ── Main ─────────────────────────────────────────────────────────────────── -->
+<main id="main">
+
+  <!-- shown when nothing is selected -->
+  <div id="no-selection">
+    <div class="icon">📋</div>
+    <h2 id="no-selection-title">Select an item to begin</h2>
+    <p id="no-selection-copy">Pick any item from the left panel to open its authoring form.</p>
+  </div>
+
+  <!-- editor – hidden until item selected -->
+  <div id="editor" style="display:none; height:100%; flex-direction:column;">
+
+    <div id="editor-header">
+      <div id="editor-header-title">
+        <span id="editor-item-id"></span>
+        <span id="editor-item-title">—</span>
+      </div>
+      <div id="editor-header-actions">
+        <button class="btn sm" id="btn-prev" title="Previous item">◀</button>
+        <button class="btn sm" id="btn-next" title="Next item">▶</button>
+        <button class="btn primary" id="btn-save">Save item</button>
+      </div>
+    </div>
+
+    <div id="editor-body">
+      <div id="editor-layout">
+        <div id="editor-form"><!-- populated by JS --></div>
+        <div id="checklist-panel"><!-- populated by JS --></div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- Toast notification -->
+<div id="save-toast"></div>
+
+<script type="module" src="/static/app.js?v=2"></script>
+</body>
+</html>
