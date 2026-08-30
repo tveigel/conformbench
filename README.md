@@ -8,9 +8,8 @@ post-turn record.
 
 This repository contains the public runner, evaluator, baseline systems,
 analysis scripts, and ConFormBench Studio. The benchmark data and frozen paper
-artifacts are released separately as the **ConFormBench: Benchmark Data and
-Evaluation Artifacts** dataset on
-[Zenodo](https://zenodo.org/search?q=ConFormBench).
+artifacts are released separately in the versioned
+[ConFormBench dataset on Zenodo](https://doi.org/10.5281/zenodo.22166024).
 
 ## Installation
 
@@ -196,8 +195,9 @@ and the released derived questionnaire schemas.
 
 ## Citation
 
-Citation metadata is provided in `CITATION.cff`. Please cite the ConFormBench
-paper and the versioned Zenodo dataset record when using the benchmark.
+Please cite the ConFormBench paper and the
+[versioned Zenodo dataset](https://doi.org/10.5281/zenodo.22166024) when using
+the benchmark.
 
 ## License
 
